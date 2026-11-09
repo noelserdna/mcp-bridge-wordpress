@@ -1,0 +1,24 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "mcp-bridge-wordpress",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-10-01",
+	"compatibility_flags": ["nodejs_compat"],
+	"workers_dev": true,
+	"preview_urls": false,
+	"observability": { "enabled": true },
+	"kv_namespaces": [
+		{ "binding": "OAUTH_KV", "id": "<id-de-tu-kv>" }
+	],
+	"vars": {
+		// La web WordPress con el plugin MCP Adapter (sin barra final).
+		"WP_URL": "https://sanromandelosmontes.org",
+		// Dirección pública de este Worker (sin barra final). Se usa en los metadatos OAuth.
+		"BRIDGE_URL": "https://mcp-bridge-wordpress.<tu-subdominio>.workers.dev",
+		// Nombre que se enseña en la página de autorización.
+		"SITE_NAME": "Ayuntamiento de San Román de los Montes",
+		// Capacidad de WordPress que guarda imágenes (opcional). Con ella el puente ofrece la herramienta «subir_imagen».
+		"UPLOAD_ABILITY": "sanroman/subir-imagen",
+		"UPLOAD_FOLDERS": "noticias,empresas,emergentes,proyectos,fiestas,instalaciones,asociaciones,otros"
+	}
+}

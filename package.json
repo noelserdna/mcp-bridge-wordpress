@@ -1,0 +1,22 @@
+{
+  "name": "mcp-bridge-wordpress",
+  "version": "0.1.0",
+  "description": "Puente OAuth 2.1 en Cloudflare Workers para usar el MCP oficial de WordPress (MCP Adapter) desde ChatGPT, claude.ai y la app móvil de Claude, con contraseñas de aplicación de WordPress.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tipos": "tsc -p .",
+    "prueba": "node test/flujo.mjs"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "^1.2.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261021.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.151.3"
+  },
+  "private": true
+}
